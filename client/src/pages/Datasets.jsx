@@ -3,7 +3,7 @@ import axios from 'axios';
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids';
 
 import { contextMenuItems } from '../data/dummy';
-import {Excess_Deaths_Grid} from '../data/DeathNumberDataset';
+import {Excess_Deaths_Grid, ProvisionalDeathsGrid} from '../data/DeathNumberDataset';
 import { Header } from '../components';
 
 export default class DataTest extends Component {
@@ -20,7 +20,7 @@ export default class DataTest extends Component {
 
 
     componentDidMountExercises() {
-    axios.get('http://localhost:5001/exercises/')
+    axios.get(`${process.env.REACT_APP_BASE_URL}/exercises/`)
     .then(response => {
         this.setState({ exercises: response.data })
     })
@@ -30,7 +30,7 @@ export default class DataTest extends Component {
     }
 
     componentDidMountSexAgeState() {
-    axios.get('http://localhost:5001/sexagestate/')
+    axios.get(`${process.env.REACT_APP_BASE_URL}/sexagestate/`)
     .then(response => {
         this.setState({ sexagestate: response.data })
     })
@@ -61,6 +61,26 @@ export default class DataTest extends Component {
             >
                 <ColumnsDirective>
                     {Excess_Deaths_Grid.map((item, index) => (
+                    <ColumnDirective key={index} {...item} width="150" />
+                    ))}
+                </ColumnsDirective>
+                <Inject services={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport, Edit, PdfExport]} />
+            </GridComponent>
+
+
+            <Header title="Provisional COVID-19 Deaths by Sex and Age" />
+            <GridComponent
+                id="gridcomp"
+                dataSource={this.state.sexagestate}
+                allowPaging
+                allowSorting
+                allowExcelExport
+                allowPdfExport
+                contextMenuItems={contextMenuItems}
+                editSettings={this.state.editing}
+            >
+                <ColumnsDirective>
+                    {ProvisionalDeathsGrid.map((item, index) => (
                     <ColumnDirective key={index} {...item} width="150" />
                     ))}
                 </ColumnsDirective>

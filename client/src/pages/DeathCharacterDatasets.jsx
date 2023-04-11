@@ -26,7 +26,7 @@ export default class DeathCharacterDatasets extends Component {
 
 
     componentDidMountConfirmRace() {
-    axios.get('http://localhost:5001/mdconfirmedrace/')
+    axios.get(`${process.env.REACT_APP_BASE_URL}/mdconfirmedrace/`)
     .then(response => {
         this.setState({ confirmRace: response.data })
     })
@@ -36,7 +36,7 @@ export default class DeathCharacterDatasets extends Component {
     }
 
     componentDidMountHhs() {
-      axios.get('http://localhost:5001/provisionalhhs/')
+    axios.get(`${process.env.REACT_APP_BASE_URL}/provisionalhhs/`)
       .then(response => {
           this.setState({ hhs: response.data })
       })
@@ -46,7 +46,7 @@ export default class DeathCharacterDatasets extends Component {
       }
 
     componentDidMountConfirmHis() {
-    axios.get('http://localhost:5001/ahprovisionalhis/')
+    axios.get(`${process.env.REACT_APP_BASE_URL}/ahprovisionalhis/`)
     .then(response => {
         this.setState({ provisionalHis: response.data })
     })
@@ -56,7 +56,7 @@ export default class DeathCharacterDatasets extends Component {
     }
 
     componentDidMountConfirmEdu() {
-      axios.get('http://localhost:5001/ahprovisionaledu/')
+    axios.get(`${process.env.REACT_APP_BASE_URL}/ahprovisionaledu/`)
       .then(response => {
           this.setState({ provisionalEdu: response.data })
       })

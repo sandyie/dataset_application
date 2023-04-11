@@ -420,6 +420,24 @@ export const AhProvisionalHispanic_Grid = [
   { field: 'flag_stroke', headerText: 'flag_stroke', width: '150', textAlign: 'Center' },
   ];
   
+  export const ProvisionalDeathsGrid = [
+    { field: 'Data As Of', headerText: 'Data As Of', width: '150', textAlign: 'Center' },
+    { field: 'Start Date', headerText: 'Start Date', width: '150', textAlign: 'Center' },
+    { field: 'End Date', headerText: 'End Date', width: '150', textAlign: 'Center' },
+    { field: 'Group', headerText: 'Group', width: '150', textAlign: 'Center' },
+    { field: 'Year', headerText: 'Year', width: '150', textAlign: 'Center' },
+    { field: 'Month', headerText: 'Month', width: '150', textAlign: 'Center' },
+    { field: 'State', headerText: 'State', width: '150', textAlign: 'Center' },
+    { field: 'Sex', headerText: 'Sex', width: '150', textAlign: 'Center' },
+    { field: 'Age Group', headerText: 'Age Group', width: '150', textAlign: 'Center' },
+    { field: 'COVID-19 Deaths', headerText: 'COVID-19 Deaths', width: '150', textAlign: 'Center' },
+    { field: 'Total Deaths', headerText: 'Total Deaths', width: '150', textAlign: 'Center' },
+    { field: 'Pneumonia Deaths', headerText: 'Pneumonia Deaths', width: '150', textAlign: 'Center' },
+    { field: 'Pneumonia and COVID-19 Deaths', headerText: 'Pneumonia and COVID-19 Deaths', width: '150', textAlign: 'Center' },
+    { field: 'Influenza Deaths', headerText: 'Influenza Deaths', width: '150', textAlign: 'Center' },
+    { field: 'Pneumonia, Influenza, or COVID-19 Deaths', headerText: 'Pneumonia, Influenza, or COVID-19 Deaths', width: '150', textAlign: 'Center' },
+    { field: 'Footnote', headerText: 'Footnote', width: '150', textAlign: 'Center' },
+    ];
   
   export const augment_tags = [
     {"title": "Provisional COVID-19 Deaths by Sex and Age", "description": "Deaths involving coronavirus disease 2019 (COVID-19), pneumonia, and influenza reported to NCHS by sex, age group, and jurisdiction of occurrence.", "topics": ["Older Adults Health Data Collection"], "tags": ["age", "age-group", "coronavirus", "covid-19", "deaths", "influenza", "monthly", "mortality", "nchs", "nvss", "pneumonia", "provisional", "puerto-rico", "sex", "state", "united-states", "yearly"], "theme": "NCHS", "JSON_url": "https://data.cdc.gov/api/views/9bhg-hcku/rows.json?accessType=DOWNLOAD", "augment_tag": ["2019", "covid", "death", "gender", "health", "open-data", "data", "share", "download", "outbreak", "disease", "public-health", "department-of-health"], "link" : "https://catalog.data.gov/dataset/provisional-covid-19-death-counts-by-sex-age-and-state"},

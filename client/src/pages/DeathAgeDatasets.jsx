@@ -23,7 +23,7 @@ export default class DeathAgeDatasets extends Component {
 
 
     componentDidMountConditionals() {
-    axios.get('http://localhost:5001/conditional/')
+    axios.get(`${process.env.REACT_APP_BASE_URL}/conditional/`)
     .then(response => {
         this.setState({ conditionals: response.data })
     })
@@ -33,7 +33,7 @@ export default class DeathAgeDatasets extends Component {
     }
 
     componentDidMountNvss() {
-    axios.get('http://localhost:5001/nvssprovisional/')
+    axios.get(`${process.env.REACT_APP_BASE_URL}/nvssprovisional/`)
     .then(response => {
         this.setState({ nvss: response.data })
     })
@@ -43,7 +43,7 @@ export default class DeathAgeDatasets extends Component {
     }
 
     componentDidMountMd() {
-        axios.get('http://localhost:5001/mdconfirmage/')
+        axios.get(`${process.env.REACT_APP_BASE_URL}/mdconfirmage/`)
         .then(response => {
             this.setState({ md: response.data })
             
